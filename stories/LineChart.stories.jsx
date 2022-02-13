@@ -3,7 +3,7 @@ import * as Recharts from "recharts";
 
 export default {
   title: "LineChart",
-  component: LineChart,
+  component: Recharts.LineChart,
 };
 
 const Template = (args) => (
