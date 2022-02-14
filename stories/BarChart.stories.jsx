@@ -3,13 +3,13 @@ import * as Recharts from "recharts";
 import data from "../data";
 
 export default {
-  title: "LineChart",
-  component: Recharts.LineChart,
+  title: "BarChart",
+  component: Recharts.BarChart,
 };
 
 
 const Template = (args) => (
-  <Recharts.LineChart
+  <Recharts.BarChart
     {...args}
   >
     <Recharts.CartesianGrid strokeDasharray="3 3" />
@@ -17,9 +17,9 @@ const Template = (args) => (
     <Recharts.YAxis />
     <Recharts.Tooltip />
     <Recharts.Legend />
-    <Recharts.Line type="monotone" dataKey={args.line1Key} stroke={args.line1Color} activeDot={{ r: 8 }} />
-    <Recharts.Line type="monotone" dataKey={args.line2Key} stroke={args.line2Color} />
-  </Recharts.LineChart>
+    <Recharts.Bar dataKey={args.data1Key} fill={args.data1Color} />
+    <Recharts.Bar dataKey={args.data2Key} fill={args.data2Color} />
+  </Recharts.BarChart>
 );
 
 export const Simple = Template.bind({});
@@ -32,9 +32,9 @@ Simple.args = {
     left: 20,
     bottom: 5,
   },
-  line1Color: '#82ca9d',
-  line2Color: '#8884d8',
-  line1Key: 'uv',
-  line2Key: 'pv',
+  data1Color: '#82ca9d',
+  data2Color: '#8884d8',
+  data1Key: 'uv',
+  data2Key: 'pv',
   data: data,
 };
