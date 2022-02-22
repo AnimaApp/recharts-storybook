@@ -18,6 +18,10 @@ const Template = (args) => (
       fill={args.data1FillColor}
       label
     />
+    {args.AnimaComponentShowTooltip && <Recharts.Tooltip />}
+    {args.AnimaComponentShowLegend && (
+      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
+    )}
   </Recharts.PieChart>
 );
 
@@ -35,4 +39,8 @@ SinglePie.args = {
   data1OuterRadius: 60,
   data1Key: "uv",
   data: data,
+  align: "center",
+  verticalAlign: "top",
+  AnimaComponentShowTooltip: false,
+  AnimaComponentShowLegend: false,
 };
