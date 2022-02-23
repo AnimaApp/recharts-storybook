@@ -47,4 +47,5 @@ Simple.args = {
   AnimaComponentShowYAxis: true,
   AnimaComponentShowTooltip: true,
   AnimaComponentShowLegend: true,
+  AnimaWidgetDescription: "An area chart combines the line chart and bar chart to show how one or more groups' numeric values change over the progression of a second variable, typically that of time."
 };
