@@ -9,10 +9,13 @@ export default {
 
 const Template = (args) => (
   <Recharts.AreaChart {...args}>
-    <Recharts.CartesianGrid strokeDasharray="3 3" />
-    <Recharts.XAxis dataKey={args.xAxisDataKey} />
-    <Recharts.YAxis />
-    <Recharts.Tooltip />
+    {args.AnimaComponentShowCartesianGrid && <Recharts.CartesianGrid strokeDasharray="3 3" />}
+    {args.AnimaComponentShowXAxis && <Recharts.XAxis dataKey={args.xAxisDataKey} />}
+    {args.AnimaComponentShowYAxis && <Recharts.YAxis />}
+    {args.AnimaComponentShowTooltip && <Recharts.Tooltip />}
+    {args.AnimaComponentShowLegend && (
+      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
+    )}
     <Recharts.Area
       type="monotone"
       dataKey={args.dataKey}
@@ -36,5 +39,13 @@ Simple.args = {
   strokeColor: "8884d8",
   dataKey: "uv",
   xAxisDataKey: "name",
+  align: "center",
+  verticalAlign: "bottom",
   data: data,
+  AnimaComponentShowCartesianGrid: true,
+  AnimaComponentShowXAxis: true,
+  AnimaComponentShowYAxis: true,
+  AnimaComponentShowTooltip: true,
+  AnimaComponentShowLegend: true,
+  AnimaWidgetDescription: "An area chart combines the line chart and bar chart to show how one or more groups' numeric values change over the progression of a second variable, typically that of time."
 };
